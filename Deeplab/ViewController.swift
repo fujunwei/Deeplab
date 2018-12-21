@@ -7,23 +7,6 @@
 //
 
 import Cocoa
-//class ViewController: NSViewController {
-//
-//  override func viewDidLoad() {
-//    super.viewDidLoad()
-//
-//    // Do any additional setup after loading the view.
-//  }
-//
-//  override var representedObject: Any? {
-//    didSet {
-//    // Update the view, if already loaded.
-//    }
-//  }
-//
-//
-//}
-
 import CoreML
 
 class ViewController: NSViewController {
@@ -49,8 +32,8 @@ class ViewController: NSViewController {
     }
   }
   
-//  let hedMain = HED_fuse()
-  let deep_lab = deeplab()
+  let hedMain = HED_fuse()
+  let hedSO = HED_so()
 
   var selectedModel: SelectedModel = .fuse
   
@@ -72,27 +55,17 @@ class ViewController: NSViewController {
     // In this case we need to feed pixel buffer which is 500x500 sized.
     let inputW = 500
     let inputH = 500
-//    guard let inputPixelBuffer = inputImage.resized(to: NSSize(width: inputW, height: inputH))
-//      .pixelBuffer(width: inputW, height: inputH) else {
-//        fatalError("Couldn't create pixel buffer.")
-//    }
-    
-//    guard let inputPixelData = inputImage.resized(to: NSSize(width: inputW, height: inputH))
-//      .pixelData() else {
-//        fatalError("Couldn't create pixel buffer.")
-//    }
+    guard let inputPixelBuffer = inputImage.resized(to: NSSize(width: inputW, height: inputH))
+      .pixelBuffer(width: inputW, height: inputH) else {
+        fatalError("Couldn't create pixel buffer.")
+    }
     
     // Use different models based on what output we need
     let featureProvider: MLFeatureProvider
-//    featureProvider = try! hedMain.prediction(data: inputPixelBuffer)
-    
-    let multiArray: MLMultiArray?;
-    multiArray = preprocess(image: self.inputImage, width: 513, height: 513)
-    
-    featureProvider = try! deep_lab.prediction(sub_7__0: multiArray!)
+    featureProvider = try! hedMain.prediction(data: inputPixelBuffer)
     
     // Retrieve results
-    guard let outputFeatures = featureProvider.featureValue(for: "ResizeBilinear_3__0")?.multiArrayValue else {
+    guard let outputFeatures = featureProvider.featureValue(for: selectedModel.outputLayerName)?.multiArrayValue else {
       fatalError("Couldn't retrieve features")
     }
     
@@ -100,13 +73,8 @@ class ViewController: NSViewController {
     let bufferSize = outputFeatures.shape.lazy.map { $0.intValue }.reduce(1, { $0 * $1 })
     
     // Get data pointer to the buffer
-    let dataPointer = UnsafeMutableBufferPointer(start: outputFeatures.dataPointer.assumingMemoryBound(to: Double.self),
-                                                 count: bufferSize)
+    let dataPointer = UnsafeMutableBufferPointer(start: outputFeatures.dataPointer.assumingMemoryBound(to: Double.self), count: bufferSize)
     
-    for i in 0..<bufferSize {
-      let value = dataPointer[i]
-      NSLog("float:%f ",value);
-    }
     // Prepare buffer for single-channel image result
     var imgData = [UInt8](repeating: 0, count: bufferSize)
     
