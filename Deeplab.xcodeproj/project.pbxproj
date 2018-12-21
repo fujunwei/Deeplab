@@ -11,6 +11,13 @@
 		5B151BAE21CCB6BA00C1F925 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BAD21CCB6BA00C1F925 /* ViewController.swift */; };
 		5B151BB021CCB6BD00C1F925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B151BAF21CCB6BD00C1F925 /* Assets.xcassets */; };
 		5B151BB321CCB6BD00C1F925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B151BB121CCB6BD00C1F925 /* Main.storyboard */; };
+		5B151BC021CCB7E300C1F925 /* deeplab.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BBE21CCB7E300C1F925 /* deeplab.mlmodel */; };
+		5B151BC121CCB7E300C1F925 /* HED_fuse.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BBF21CCB7E300C1F925 /* HED_fuse.mlmodel */; };
+		5B151BC421CCB8F800C1F925 /* HED_so.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC221CCB8F800C1F925 /* HED_so.mlmodel */; };
+		5B151BC521CCB8F800C1F925 /* HED_so3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC321CCB8F800C1F925 /* HED_so3.mlmodel */; };
+		5B151BCA21CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC821CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift */; };
+		5B151BCB21CCBC8800C1F925 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC921CCBC8800C1F925 /* UIImage+Resize.swift */; };
+		5B151BCD21CCBC9A00C1F925 /* pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B151BCC21CCBC9A00C1F925 /* pic1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +28,13 @@
 		5B151BB221CCB6BD00C1F925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B151BB421CCB6BD00C1F925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B151BB521CCB6BD00C1F925 /* Deeplab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Deeplab.entitlements; sourceTree = "<group>"; };
+		5B151BBE21CCB7E300C1F925 /* deeplab.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = deeplab.mlmodel; path = "../../../../../Downloads/HED-CoreML-master/HED-CoreML/Models/deeplab.mlmodel"; sourceTree = "<group>"; };
+		5B151BBF21CCB7E300C1F925 /* HED_fuse.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HED_fuse.mlmodel; path = "../../../../../Downloads/HED-CoreML-master/HED-CoreML/Models/HED_fuse.mlmodel"; sourceTree = "<group>"; };
+		5B151BC221CCB8F800C1F925 /* HED_so.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HED_so.mlmodel; path = "../../../../../Downloads/HED-CoreML-master/HED-CoreML/Models/HED_so.mlmodel"; sourceTree = "<group>"; };
+		5B151BC321CCB8F800C1F925 /* HED_so3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = HED_so3.mlmodel; path = "../../../../../Downloads/HED-CoreML-master/HED-CoreML/Models/HED_so3.mlmodel"; sourceTree = "<group>"; };
+		5B151BC821CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+CVPixelBuffer.swift"; path = "../../../../../../Downloads/HED-CoreML-master/HED-CoreML/Utils/UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		5B151BC921CCBC8800C1F925 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Resize.swift"; path = "../../../../../../Downloads/HED-CoreML-master/HED-CoreML/Utils/UIImage+Resize.swift"; sourceTree = "<group>"; };
+		5B151BCC21CCBC9A00C1F925 /* pic1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic1.jpg; path = "../../../../Downloads/HED-CoreML-master/HED-CoreML/Images/pic1.jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +67,9 @@
 		5B151BAA21CCB6BA00C1F925 /* Deeplab */ = {
 			isa = PBXGroup;
 			children = (
+				5B151BC721CCBC6700C1F925 /* Utils */,
+				5B151BC621CCBC5A00C1F925 /* Images */,
+				5B151BBD21CCB7BD00C1F925 /* Models */,
 				5B151BAB21CCB6BA00C1F925 /* AppDelegate.swift */,
 				5B151BAD21CCB6BA00C1F925 /* ViewController.swift */,
 				5B151BAF21CCB6BD00C1F925 /* Assets.xcassets */,
@@ -61,6 +78,34 @@
 				5B151BB521CCB6BD00C1F925 /* Deeplab.entitlements */,
 			);
 			path = Deeplab;
+			sourceTree = "<group>";
+		};
+		5B151BBD21CCB7BD00C1F925 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B151BC221CCB8F800C1F925 /* HED_so.mlmodel */,
+				5B151BC321CCB8F800C1F925 /* HED_so3.mlmodel */,
+				5B151BBE21CCB7E300C1F925 /* deeplab.mlmodel */,
+				5B151BBF21CCB7E300C1F925 /* HED_fuse.mlmodel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5B151BC621CCBC5A00C1F925 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5B151BCC21CCBC9A00C1F925 /* pic1.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		5B151BC721CCBC6700C1F925 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5B151BC821CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift */,
+				5B151BC921CCBC8800C1F925 /* UIImage+Resize.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +134,9 @@
 		5B151BA021CCB6BA00C1F925 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "mac-webgl-stable";
@@ -122,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B151BB021CCB6BD00C1F925 /* Assets.xcassets in Resources */,
+				5B151BCD21CCBC9A00C1F925 /* pic1.jpg in Resources */,
 				5B151BB321CCB6BD00C1F925 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +183,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B151BAE21CCB6BA00C1F925 /* ViewController.swift in Sources */,
+				5B151BC021CCB7E300C1F925 /* deeplab.mlmodel in Sources */,
+				5B151BC521CCB8F800C1F925 /* HED_so3.mlmodel in Sources */,
+				5B151BC421CCB8F800C1F925 /* HED_so.mlmodel in Sources */,
+				5B151BCA21CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift in Sources */,
+				5B151BCB21CCBC8800C1F925 /* UIImage+Resize.swift in Sources */,
 				5B151BAC21CCB6BA00C1F925 /* AppDelegate.swift in Sources */,
+				5B151BC121CCB7E300C1F925 /* HED_fuse.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
