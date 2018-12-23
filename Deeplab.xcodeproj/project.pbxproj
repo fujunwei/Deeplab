@@ -18,6 +18,7 @@
 		5B151BCA21CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC821CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift */; };
 		5B151BCB21CCBC8800C1F925 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B151BC921CCBC8800C1F925 /* UIImage+Resize.swift */; };
 		5B151BCD21CCBC9A00C1F925 /* pic1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B151BCC21CCBC9A00C1F925 /* pic1.jpg */; };
+		5B151BCF21CE60F700C1F925 /* woman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5B151BCE21CE60F700C1F925 /* woman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5B151BC821CCBC8800C1F925 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+CVPixelBuffer.swift"; path = "../../../../../../Downloads/HED-CoreML-master/HED-CoreML/Utils/UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
 		5B151BC921CCBC8800C1F925 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Resize.swift"; path = "../../../../../../Downloads/HED-CoreML-master/HED-CoreML/Utils/UIImage+Resize.swift"; sourceTree = "<group>"; };
 		5B151BCC21CCBC9A00C1F925 /* pic1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = pic1.jpg; path = "../../../../Downloads/HED-CoreML-master/HED-CoreML/Images/pic1.jpg"; sourceTree = SOURCE_ROOT; };
+		5B151BCE21CE60F700C1F925 /* woman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		5B151BC621CCBC5A00C1F925 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5B151BCE21CE60F700C1F925 /* woman.jpg */,
 				5B151BCC21CCBC9A00C1F925 /* pic1.jpg */,
 			);
 			path = Images;
@@ -171,6 +174,7 @@
 			files = (
 				5B151BB021CCB6BD00C1F925 /* Assets.xcassets in Resources */,
 				5B151BCD21CCBC9A00C1F925 /* pic1.jpg in Resources */,
+				5B151BCF21CE60F700C1F925 /* woman.jpg in Resources */,
 				5B151BB321CCB6BD00C1F925 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+<div id="page-wrapper">
+
+		<h1>Text File Reader</h1>
+		<div>
+			Select a text file: 
+			<input type="file" id="fileInput">
+		</div>
+		<pre id="fileDisplayArea"><pre>
+
+	</div>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+
+
+window.onload = function() {
+<!--    var fileInput = document.getElementById('fileInput');-->
+<!--    var fileDisplayArea = document.getElementById('fileDisplayArea');-->
+        var fileInput = document.createElement("input");
+        fileInput.type = "file";
+        fileInput.id = "fileInput";
+        document.getElementById("button").appendChild(fileInput);
+        var new_float_array;
+
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+			var textType = /text.*/;
+
+			if (file.type.match(textType)) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					var text = reader.result;
+					var arr = text.split(",");
+                    var origin_float_array = new Float32Array(arr.length);
+					for(j in arr) {
+                       var b = parseFloat(arr[j]);
+                       origin_float_array[j] = b;
+					}
+                  
+                   new_float_array = new Float32Array(origin_float_array);
+                   var width = 513, height = 513, depth = 21;
+                   for (var c = 0; c < depth; c++) {
+                     for (var h = 0; h < height; h++) {
+                       for (var w = 0; w < width; w++) {
+                         new_float_array[c +
+                                           h * width * depth + w * depth] =
+                         origin_float_array[c * width * height + h * width + w];
+                       }
+                     }
+                   }
+                   console.log(new_float_array.length);
+				}
+
+				reader.readAsText(file);	
+			} else {
+				fileDisplayArea.innerText = "File not supported!"
+			}
+		});
+}
+
+</script>
+<!--renderer.drawOutputs({data:new_float_array, outputShape:[513,513,21],labels:[]})-->
+</body>
+</html>
